@@ -1,4 +1,4 @@
-# Connect 4 Game
+# Connect 4 Game | Chasyl De Guzman
 
 class Connect4:
   def __init__(self):

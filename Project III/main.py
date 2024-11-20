@@ -40,14 +40,8 @@ class Connect4:
         return True
       row -= 1
 
-    # TO BE IMPLEMENTED:  If the column is full, return False. Question: what indicates the column is full?
-   
-
-    # TO BE IMPLEMENTED:  Drop the current player's chip into the selected slot. This simply means mark the cell 
-    # you found above to self.current_player, which is either X or O
-
-    
-    return True
+    # TO BE IMPLEMENTED: If the column is full, return False. Question: what indicates the column is full?
+    return False
 
   
   def play_game(self):

@@ -31,9 +31,14 @@ class Connect4:
     if column < 1 or column > 7:
       return False
 
-    # TO BE IMPLEMENTED: Use a while-loop to check row by row for an empty cell on the column. 
-    # Hint: start with the highest row number and decrement the row number each time in the loop.
- 
+    row = 5
+    while row >= 0:
+      if self.board[row][column - 1] == ' ':
+        # TO BE IMPLEMENTED: Drop the current player's chip into the selected slot. This simply means mark the cell 
+        # you found above to self.current_player, which is either X or O
+        self.board[row][column - 1] = self.current_player
+        return True
+      row -= 1
 
     # TO BE IMPLEMENTED:  If the column is full, return False. Question: what indicates the column is full?
    

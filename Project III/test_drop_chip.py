@@ -35,5 +35,13 @@ class Connect4DropChipTestCase(unittest.TestCase):
         result = self.game.drop_chip(1)
         self.assertFalse(result)
 
+    # my tests 
+    # correctly switches players after a chip is dropped
+    def test_switch_player(self):
+        self.game.drop_chip(1)
+        self.game.switch_player()
+        self.assertTrue(self.game.drop_chip(1))
+        self.assertEqual(self.game.board[4][0], 'O')
+
 if __name__ == '__main__':
     unittest.main()

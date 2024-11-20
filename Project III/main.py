@@ -27,8 +27,9 @@ class Connect4:
     Returns:
       bool: True if the chip was successfully dropped, False if the column is full or if the column is out of range.
     """
-    # TO BE IMPLEMENTED: Check if the column is out of range. The valid column # is from 1 to 7. 
-
+    # TO BE IMPLEMENTED: Check if the column is out of range. The valid column # is from 1 to 7.
+    if column < 1 or column > 7:
+      return False
 
     # TO BE IMPLEMENTED: Use a while-loop to check row by row for an empty cell on the column. 
     # Hint: start with the highest row number and decrement the row number each time in the loop.

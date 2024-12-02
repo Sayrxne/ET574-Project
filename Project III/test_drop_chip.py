@@ -46,15 +46,15 @@ class Connect4DropChipTestCase(unittest.TestCase):
         self.assertEqual(self.game.board[4][0], 'O')
 
 
-    # chips are correctly stacked in a column, one on top of the other
-    def test_column_stacking(self):
-        column = 2
-        self.assertTrue(self.game.drop_chip(column))
-        self.assertEqual(self.game.board[5][column], self.game.current_player)
-
+    # verify player switching without a move
+    def test_switch_player_without_move(self):
+        initial_player = self.game.current_player
         self.game.switch_player()
-        self.assertTrue(self.game.drop_chip(column))
-        self.assertEqual(self.game.board[4][column], self.game.current_player)
+        switched_player = self.game.current_player
+        self.assertNotEqual(initial_player, switched_player)
+        self.game.switch_player()
+        self.assertEqual(self.game.current_player, initial_player)
+
 
 if __name__ == '__main__':
     unittest.main()

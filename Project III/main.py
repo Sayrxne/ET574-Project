@@ -70,7 +70,15 @@ class Connect4:
                self.board[row + 2][col] == player and 
                self.board[row + 3][col] == player):
                return True 
-  
+    
+    # Check diagonal (top-left to bottom-right)
+    for row in range(3):
+        for col in range (4):
+            if (self.board[row][col] == player and
+               self.board[row + 1][col + 1] == player and
+               self.board[row + 2][col + 2] == player and 
+               self.board[row + 3][col + 3] == player):
+               return True   
   
   def play_game(self):
     game_over = False

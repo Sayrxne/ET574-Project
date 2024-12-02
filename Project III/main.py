@@ -42,7 +42,35 @@ class Connect4:
 
     # TO BE IMPLEMENTED: If the column is full, return False. Question: what indicates the column is full?
     return False
+  
+  def check_win(self, player):
+    """
+    Check if the specified player has won the game.
 
+    Args:
+      player (str): The player to check for a win. It can be either 'X' or 'O'.
+
+    Returns:
+      bool: True if the player has won, False otherwise.
+    """
+    # Check horizontal
+    for row in range(6):
+        for col in range (4):
+            if (self.board[row][col] == player and
+               self.board[row][col + 1] == player and
+               self.board[row][col + 2] == player and 
+               self.board[row][col + 3] == player):
+              return True 
+            
+    # Check vertical
+    for row in range(3):
+        for col in range (7):
+            if (self.board[row][col] == player and
+               self.board[row + 1][col] == player and
+               self.board[row + 2][col] == player and 
+               self.board[row + 3][col] == player):
+               return True 
+  
   
   def play_game(self):
     game_over = False
